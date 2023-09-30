@@ -3,8 +3,8 @@ project(Projects_EVM)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(practical1)
-include_directories(practical2)
-include_directories(practical3)
-include_directories(practical4)
+add_subdirectory(practical1)
+add_subdirectory(practical2)
+add_subdirectory(practical3)
+add_subdirectory(practical4)
 
