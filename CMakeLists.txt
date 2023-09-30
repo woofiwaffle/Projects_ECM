@@ -6,4 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(practical1)
 include_directories(practical2)
 include_directories(practical3)
+include_directories(practical4)
 
