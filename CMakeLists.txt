@@ -7,4 +7,3 @@ add_subdirectory(practical1)
 add_subdirectory(practical2)
 add_subdirectory(practical3)
 add_subdirectory(practical4)
-
