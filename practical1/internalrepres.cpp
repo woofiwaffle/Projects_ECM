@@ -7,10 +7,13 @@ string internalrepres::FloatToBinary(float floatNumber) {
 
     unsigned int floatBits;
     memcpy(&floatBits, &floatNumber, sizeof(floatNumber));
-    //memcpy - for bitwise representation of numbers
+    /* memcpy - for bitwise representation of numbers
+     * &floatBits - pointer to the memory area into which the binary representation floatNumber is copied
+     * &floatNumber - pointer to the memory area from which the binary representation of floatNumber was copied
+     * sizeof(floatNumber) - size in bytes */
 
     int sign = (floatBits >> 31) & 1;
-    int exponent = (floatBits >> 23) & 0xFF;
+    int exponent = (floatBits >> 23) & 0xFF; // 0xFF - 255 (IEEE754)
     int mantissa = floatBits & 0x7FFFFF;
 
     string signString = to_string(sign);
@@ -43,19 +46,39 @@ string internalrepres::UnsignedCharToBinary(unsigned char ucharNumber) {
 
 
 
-unsigned char internalrepres::SetBits(unsigned char ucharNumber, int startBit, int numBits) {
+unsigned char internalrepres::SetBits(unsigned char ucharNumber) {
 
-    /*if(startBit < 0 || startBit >= 8 || numBits <= 0 || numBits > 8){
-        cout << "Error" << endl;
+    int startBit, numBits;
+
+    cout << "Enter the most significant bit (0-7): ";
+    cin >> startBit;
+
+    cout << "Enter the number of bits to set: ";
+    cin >> numBits;
+
+    if(startBit < 0|| startBit > 8 || numBits <= 0 || numBits > 8 || startBit - numBits + 1 < 0){
+        cout << "Invalid" << endl;
         return ucharNumber;
     }
 
-    unsigned char mask = (1 << numBits) - 1;
+    unsigned char mask = 1 << startBit;
 
-    ucharNumber |= (mask << (startBit - numBits + 1));
+    for(int i = 0; i < numBits; ++i){
+        cout << "Enter value for bit (0 or 1): " << (startBit - i) << ": ";
+        int newBit;
+        cin >> newBit;
+        if(newBit != 0 && newBit != 1){
+            cout << "Enter a valid value (0 or 1) for the bit" << endl;
+            return ucharNumber;
+        }
+        if(newBit == 1){
+            ucharNumber |= mask;
+        }
+        else{
+            ucharNumber &= ~mask; //inversion, changes from 0 to 1 and from 1 to 0
+        }
+        mask >>= 1;
+    }
 
-    return ucharNumber;*/
+    return ucharNumber;
 }
-
-
-

@@ -19,8 +19,8 @@ int application::exec() {
                 cout << "Enter number (float): ";
                 if(!(cin >> floatNumber)){
                     cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    cerr << "Error" << std::endl;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cerr << "Invalid" << endl;
                     break;
                 }
 
@@ -33,8 +33,8 @@ int application::exec() {
                 cout << "Enter number (unsigned char): ";
                 if(!(cin >> inputUcharNumber)){
                     cin.clear();
-                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                    cerr << "Error" << std::endl;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cerr << "Invalid" << endl;
                     break;
                 }
                 else{
@@ -45,32 +45,13 @@ int application::exec() {
                 break;
             }
             case '3':{
-                /*unsigned char ucharNumber;
-                int startBit, numBits;
+                unsigned char ucharNumber;
 
-                cout << "Enter unsigned char: ";
-                cin >> ucharNumber;
-                cout << "Binary: ";
-                for(int i = 7; i >= 0; --i){
-                    cout << ((ucharNumber >> i) & 1);
-                }
-                cout << endl;
+                ucharNumber = internalrepres::SetBits(ucharNumber);
+                string binaryInput = internalrepres::UnsignedCharToBinary(ucharNumber);
 
-                cout << "Enter the number of the most significant bit (0-7): ";
-                cin >> startBit;
-
-                cout << "\n";
-
-                cout << "Enter the number of bits to set: ";
-                cin >> numBits;
-
-                ucharNumber = internalrepres::SetBits(ucharNumber, startBit, numBits);
                 cout << "Result: " << static_cast<int>(ucharNumber) << endl;
-                cout << "Binary: ";
-                for(int i = 7; i >= 0; --i){
-                    cout << ((ucharNumber >> i) & 1);
-                }
-                cout << endl;*/
+                cout << "Binary: " << binaryInput << endl;
                 break;
             }
             case '0':{
@@ -90,13 +71,13 @@ int application::exec() {
 
 int application::menu(){
     char ch;
-    cout << "---------------------------------------" << endl;
+    cout << "--------------------------------------------" << endl;
     cout << "|Binary representation:" << endl;
     cout << "|1 - float" << endl;
     cout << "|2 - unsigned char" << endl;
     cout << "|3 - set a bit to a specific position" << endl;
     cout << "|0 - Exit (Enter 0 twice in a row)" << endl << "> ";
     cin >> ch;
-    cout << "---------------------------------------" << endl;
+    cout << "--------------------------------------------" << endl;
     return ch;
 }
