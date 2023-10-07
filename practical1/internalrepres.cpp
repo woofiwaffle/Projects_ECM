@@ -46,7 +46,7 @@ string internalrepres::UnsignedCharToBinary(unsigned char ucharNumber) {
 
 
 
-unsigned char internalrepres::SetBits(unsigned char ucharNumber) {
+void internalrepres::SetBits(unsigned char& ucharNumber) {
 
     int startBit, numBits;
 
@@ -56,9 +56,9 @@ unsigned char internalrepres::SetBits(unsigned char ucharNumber) {
     cout << "Enter the number of bits to set: ";
     cin >> numBits;
 
-    if(startBit < 0|| startBit > 8 || numBits <= 0 || numBits > 8 || startBit - numBits + 1 < 0){
+    if(startBit < 0|| startBit >= 8 || numBits <= 0 || numBits > 8 || startBit - numBits + 1 < 0){
         cout << "Invalid" << endl;
-        return ucharNumber;
+        return;
     }
 
     unsigned char mask = 1 << startBit;
@@ -69,7 +69,7 @@ unsigned char internalrepres::SetBits(unsigned char ucharNumber) {
         cin >> newBit;
         if(newBit != 0 && newBit != 1){
             cout << "Enter a valid value (0 or 1) for the bit" << endl;
-            return ucharNumber;
+            return;
         }
         if(newBit == 1){
             ucharNumber |= mask;
@@ -79,6 +79,46 @@ unsigned char internalrepres::SetBits(unsigned char ucharNumber) {
         }
         mask >>= 1;
     }
+}
 
-    return ucharNumber;
+
+
+void internalrepres::SetBits(float& floatNumber) {
+
+    unsigned int floatBits;
+    memcpy(&floatBits, &floatNumber, sizeof(floatNumber));
+
+    int startBit, numBits;
+
+    cout << "Enter the most significant bit (0-31): ";
+    cin >> startBit;
+
+    cout << "Enter the number of bits to set: ";
+    cin >> numBits;
+
+    if(startBit < 0|| startBit >= 32 || numBits <= 0 || numBits > 32 || startBit - numBits + 1 < 0){
+        cout << "Invalid" << endl;
+        return;
+    }
+
+    unsigned char mask = 1 << startBit;
+
+    for(int i = 0; i < numBits; ++i){
+        cout << "Enter value for bit (0 or 1): " << (startBit - i) << ": ";
+        int newBit;
+        cin >> newBit;
+        if(newBit != 0 && newBit != 1){
+            cout << "Enter a valid value (0 or 1) for the bit" << endl;
+            return;
+        }
+        if(newBit == 1){
+            floatBits |= mask;
+        }
+        else{
+            floatBits &= ~ mask;
+        }
+        mask >>= 1;
+    }
+
+    memcpy(&floatNumber, &floatBits, sizeof(floatNumber));
 }

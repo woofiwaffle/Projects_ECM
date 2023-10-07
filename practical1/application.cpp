@@ -9,13 +9,15 @@ using namespace std;
 
 int application::exec() {
 
+    unsigned char ucharNumber = 0;
+    float floatNumber = 0.0f;
+
     char ch;
     bool exit = false;
     while(!exit){
         ch = menu();
         switch(ch){
             case '1':{
-                float floatNumber;
                 cout << "Enter number (float): ";
                 if(!(cin >> floatNumber)){
                     cin.clear();
@@ -38,20 +40,29 @@ int application::exec() {
                     break;
                 }
                 else{
-                    unsigned char ucharNumber = static_cast<unsigned char>(inputUcharNumber);
+                    ucharNumber = static_cast<unsigned char>(inputUcharNumber);
                     string binaryRepresentation = internalrepres::UnsignedCharToBinary(ucharNumber);
                     cout << "Binary: "<< "" << binaryRepresentation << endl;
                 }
                 break;
             }
             case '3':{
-                unsigned char ucharNumber;
-
-                ucharNumber = internalrepres::SetBits(ucharNumber);
-                string binaryInput = internalrepres::UnsignedCharToBinary(ucharNumber);
-
-                cout << "Result: " << static_cast<int>(ucharNumber) << endl;
-                cout << "Binary: " << binaryInput << endl;
+                int dataTypeChoice;
+                cout << "Enter data type (1 - unsigned char, 2 - float): ";
+                cin >> dataTypeChoice;
+                if(dataTypeChoice == 1){
+                    internalrepres::SetBits(ucharNumber);
+                    string binaryRepresentation = internalrepres::UnsignedCharToBinary(ucharNumber);
+                    cout << "Binary: "<< "" << binaryRepresentation << endl;
+                }
+                else if(dataTypeChoice == 2){
+                    internalrepres::SetBits(floatNumber);
+                    string binaryRepresentation = internalrepres::FloatToBinary(floatNumber);
+                    cout << "Binary: " << "" << binaryRepresentation << endl;
+                }
+                else{
+                    cout << "Incorrect data type";
+                }
                 break;
             }
             case '0':{
@@ -76,7 +87,7 @@ int application::menu(){
     cout << "|1 - float" << endl;
     cout << "|2 - unsigned char" << endl;
     cout << "|3 - set a bit to a specific position" << endl;
-    cout << "|0 - Exit (Enter 0 twice in a row)" << endl << "> ";
+    cout << "|0 - Exit" << endl << "> ";
     cin >> ch;
     cout << "--------------------------------------------" << endl;
     return ch;
