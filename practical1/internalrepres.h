@@ -9,8 +9,8 @@ class internalrepres {
 public:
     static string FloatToBinary(float floatNumber);
     static string UnsignedCharToBinary(unsigned char ucharNumber);
-    static void SetBits(unsigned  char& ucharNumber);
-    static void SetBits(float& floatNumber);
+    static void SetBitsU(unsigned  char& ucharNumber);
+    static void SetBitsF(float& floatNumber);
 };
 
 #endif //PRACTICAL1_INTERNALREPRES_H

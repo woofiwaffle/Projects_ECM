@@ -51,17 +51,19 @@ int application::exec() {
                 cout << "Enter data type (1 - unsigned char, 2 - float): ";
                 cin >> dataTypeChoice;
                 if(dataTypeChoice == 1){
-                    internalrepres::SetBits(ucharNumber);
+                    internalrepres::SetBitsU(ucharNumber);
                     string binaryRepresentation = internalrepres::UnsignedCharToBinary(ucharNumber);
                     cout << "Binary: "<< "" << binaryRepresentation << endl;
+                    cout << "Number: " << "" << static_cast<int>(ucharNumber) << endl;
                 }
                 else if(dataTypeChoice == 2){
-                    internalrepres::SetBits(floatNumber);
-                    string binaryRepresentation = internalrepres::FloatToBinary(floatNumber);
-                    cout << "Binary: " << "" << binaryRepresentation << endl;
+                    internalrepres::SetBitsF(floatNumber);
+                    string binaryRep = internalrepres::FloatToBinary(floatNumber);
+                    cout << "Binary: " << "" << binaryRep << endl;
+                    cout << "Number: " << "" << static_cast<float>(floatNumber) << endl;
                 }
                 else{
-                    cout << "Incorrect data type";
+                    cout << "Incorrect data type" << endl;
                 }
                 break;
             }

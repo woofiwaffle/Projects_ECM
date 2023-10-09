@@ -46,14 +46,14 @@ string internalrepres::UnsignedCharToBinary(unsigned char ucharNumber) {
 
 
 
-void internalrepres::SetBits(unsigned char& ucharNumber) {
+void internalrepres::SetBitsU(unsigned char& ucharNumber) {
 
     int startBit, numBits;
 
     cout << "Enter the most significant bit (0-7): ";
     cin >> startBit;
 
-    cout << "Enter the number of bits to set: ";
+    cout << "Enter the number of bits to set(max.8): ";
     cin >> numBits;
 
     if(startBit < 0|| startBit >= 8 || numBits <= 0 || numBits > 8 || startBit - numBits + 1 < 0){
@@ -83,7 +83,7 @@ void internalrepres::SetBits(unsigned char& ucharNumber) {
 
 
 
-void internalrepres::SetBits(float& floatNumber) {
+void internalrepres::SetBitsF(float& floatNumber) {
 
     unsigned int floatBits;
     memcpy(&floatBits, &floatNumber, sizeof(floatNumber));
@@ -93,15 +93,15 @@ void internalrepres::SetBits(float& floatNumber) {
     cout << "Enter the most significant bit (0-31): ";
     cin >> startBit;
 
-    cout << "Enter the number of bits to set: ";
+    cout << "Enter the number of bits to set(max.32): ";
     cin >> numBits;
 
-    if(startBit < 0|| startBit >= 32 || numBits <= 0 || numBits > 32 || startBit - numBits + 1 < 0){
+    if(startBit < 0 || startBit >= 32 || numBits <= 0 || numBits > 32 || startBit - numBits + 1 < 0){
         cout << "Invalid" << endl;
         return;
     }
 
-    unsigned char mask = 1 << startBit;
+    unsigned int mask = 1 << startBit;
 
     for(int i = 0; i < numBits; ++i){
         cout << "Enter value for bit (0 or 1): " << (startBit - i) << ": ";
@@ -111,11 +111,12 @@ void internalrepres::SetBits(float& floatNumber) {
             cout << "Enter a valid value (0 or 1) for the bit" << endl;
             return;
         }
+
         if(newBit == 1){
             floatBits |= mask;
         }
         else{
-            floatBits &= ~ mask;
+            floatBits &= ~mask;
         }
         mask >>= 1;
     }
