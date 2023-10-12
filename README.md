@@ -1,7 +1,7 @@
 <p align = "left">
   <img src = "https://img.shields.io/badge/Engine-CLion%202023.2.1-green" alt = "CLion Version">
 </p>
-<p align = "left">
+<p align = "center">
   <img src = "https://img.shields.io/badge/Engine-DOSBox%074.3-green" alt = "DOSBox Version">
 </p>
 <p align = "right">
