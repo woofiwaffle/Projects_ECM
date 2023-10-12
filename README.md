@@ -1,6 +1,6 @@
 <p align = "center">
-  <img src = "https://img.shields.io/badge/CLion-2023.2.1-green" alt = "CLion Version">
-  <img src = "https://img.shields.io/badge/1.01-DOSBox-blue?style=plastic" alt = "DOSBox Version">
+  <img src = "https://img.shields.io/badge/CLion-2023.2.1-green?style=plastic" alt = "CLion Version">
+  <img src = "https://img.shields.io/badge/DOSBox-0.74.3-blue?style=plastic" alt = "DOSBox Version">
   <img src = "https://img.shields.io/badge/TurboC%2B%2B-1.01-blue?style=plastic" alt = "TCPP Version">
 </p>
 
