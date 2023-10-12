@@ -1,4 +1,4 @@
-<p>
+<p align = "center">
   <img src = "https://img.shields.io/badge/Engine-CLion%202023.2.1-green" alt = "CLion Version">
   <img src = "https://img.shields.io/badge/DOSBox-0.74.3-blue" alt = "DOSBox Version">
   <img src = "https://img.shields.io/badge/TurboC%2B%2B-1.01-blue" alt = "TCPP Version">
