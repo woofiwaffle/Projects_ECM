@@ -111,7 +111,6 @@ void internalrepres::SetBitsF(float& floatNumber) {
             cout << "Enter a valid value (0 or 1) for the bit" << endl;
             return;
         }
-
         if(newBit == 1){
             floatBits |= mask;
         }
