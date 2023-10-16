@@ -1,5 +1,5 @@
 <p align = "center">
-  <img src = "https://img.shields.io/badge/Engine-CLion%202022.2.3-green" alt = "CLion Version">
+  <img src = "https://img.shields.io/badge/Engine-CLion%202023.2.1-green" alt = "CLion Version">
 </p>
 
 ## LETI EVM
