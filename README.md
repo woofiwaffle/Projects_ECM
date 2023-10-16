@@ -10,6 +10,9 @@
 
 1. practical1 --- Internal representation float and unsigned char
 2. practical2 --- Examining a video system (text mode)
+3. practical3 ---
+4. practical4 ---
+5. practical5 ---
  
  ## Developer
 
