@@ -3,7 +3,7 @@
   <img src = "https://img.shields.io/badge/TurboC%2B%2B-1.01-blue?style=plastic" alt = "TCPP Version">
 </p>
 
-# LITI EVM
+# LETI EVM
 
 1. Examining a video system (text mode)
 
