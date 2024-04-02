@@ -14,6 +14,6 @@
 4. practical4 --- IBM PC KEYBOARD. USING INTERRUPTS
 5. practical5 --- Timer interruption. Generate a random number of seconds. Start the countdown, after the countdown expires, squeak for 1.5 seconds (as in “Tick-Tock-Boom”).
  
- ## Developer
+## Documentation 
 
-*  [woofiwaffle](https://github.com/woofiwaffle)
+*  Details in the report
