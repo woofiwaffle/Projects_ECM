@@ -4,7 +4,7 @@
   <img alt="TCPP" src="https://img.shields.io/badge/TurboC%2B%2B-1.01-blue?style=plastic&logo=DosBox&logoColor=green&labelColor=blue&color=grey">
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&pause=1000&color=FFFFFFF7&vCenter=true&random=false&width=435&lines=LETI+Organization+of+computers(ECM)+and+systems)](https://git.io/typing-svg)
+# LETI Organization of computers(ECM) and systems
 
 ## About
 
